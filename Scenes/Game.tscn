@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://cqnrp52fouayf"]
+[gd_scene load_steps=2 format=3 uid="uid://cqnrp52fouayf"]
+
+[ext_resource type="PackedScene" uid="uid://dd1aw31e17fvn" path="res://Scenes/Card/Card.tscn" id="1_iukft"]
 
 [node name="Game" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, -0.40558, 0.579228, 10, 10, 10)
+current = true
+
+[node name="CardSpawner" type="Node3D" parent="."]
+
+[node name="CardRoot" parent="." instance=ExtResource("1_iukft")]
