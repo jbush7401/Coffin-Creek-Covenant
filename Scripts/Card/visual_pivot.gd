@@ -9,8 +9,12 @@ func _ready() -> void:
 	if camera:
 		# Set the card to be facing the camera
 		look_at(camera.global_position, Vector3.UP)
-		
+
 		# Apply an additional 180° rotation around Y axis
 		rotate_y(PI)
+
+		print("Camera position: ", camera.global_position)
+		print("Card position: ", global_position)
+		print("Card rotation: ", rotation_degrees)
 	else:
 		push_error("Camera not found!")

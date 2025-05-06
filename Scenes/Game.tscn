@@ -5,9 +5,10 @@
 [node name="Game" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, -0.40558, 0.579228, 10, 10, 10)
+transform = Transform3D(0.706667, -0.407972, 0.578083, 0.00250807, 0.818465, 0.574551, -0.707542, -0.404567, 0.579405, 10, 10, 10)
 current = true
 
 [node name="CardSpawner" type="Node3D" parent="."]
 
 [node name="CardRoot" parent="." instance=ExtResource("1_iukft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

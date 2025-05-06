@@ -1,27 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd1aw31e17fvn"]
+[gd_scene load_steps=2 format=3 uid="uid://dd1aw31e17fvn"]
 
 [ext_resource type="Texture2D" uid="uid://dlyixpd3s4est" path="res://Assets/InHouse/Card/CardTemplate001.png" id="1_g0utg"]
-[ext_resource type="Script" uid="uid://c5r50og7ns783" path="res://Scripts/Card/visual_pivot.gd" id="1_v6t3l"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ndnsx"]
-size = Vector3(7.59, 0.02, 10.5)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ndnsx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6t3l"]
-albedo_texture = ExtResource("1_g0utg")
 
 [node name="CardRoot" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_ndnsx")
-
-[node name="VisualPivot" type="Node3D" parent="."]
-script = ExtResource("1_v6t3l")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VisualPivot"]
-transform = Transform3D(3.795, 0, 0, 0, 0.02, 0, 0, 0, 5.25, 0, 0, 0)
-mesh = SubResource("PlaneMesh_ndnsx")
-surface_material_override/0 = SubResource("StandardMaterial3D_v6t3l")
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+billboard = 1
+texture = ExtResource("1_g0utg")
