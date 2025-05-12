@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d0agmftujnaih"]
+
+[node name="PlayerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 951.0
+offset_right = 1920.0
+offset_bottom = 1083.0
+color = Color(0.49853, 0.802473, 0.962647, 1)
