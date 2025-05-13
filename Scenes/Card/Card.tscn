@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd1aw31e17fvn"]
+[gd_scene load_steps=3 format=3 uid="uid://dd1aw31e17fvn"]
 
 [ext_resource type="Texture2D" uid="uid://dlyixpd3s4est" path="res://Assets/InHouse/Card/CardTemplate001.png" id="1_g0utg"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_g0utg"]
+size = Vector3(10.3292, 14.2342, 1)
+
 [node name="CardRoot" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 billboard = 1
 texture = ExtResource("1_g0utg")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_g0utg")

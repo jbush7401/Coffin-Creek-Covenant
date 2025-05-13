@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqnrp52fouayf"]
+[gd_scene load_steps=11 format=3 uid="uid://cqnrp52fouayf"]
 
+[ext_resource type="PackedScene" uid="uid://dd1aw31e17fvn" path="res://Scenes/Card/Card.tscn" id="1_71axn"]
 [ext_resource type="Script" uid="uid://c78kjmp3xoq62" path="res://Scripts/card_manager.gd" id="1_bf53h"]
 [ext_resource type="PackedScene" uid="uid://dsk1ue2kt1e8q" path="res://Assets/Purchased/Env/wall_cracked.gltf" id="3_kldst"]
 [ext_resource type="PackedScene" uid="uid://b45n6hbcby3dw" path="res://Assets/Purchased/Env/wall_corner.gltf" id="4_b2bpf"]
@@ -13,7 +14,7 @@
 [node name="Game" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999994, -0.00349065, 0, 0.00188066, 0.538767, 0.842452, -0.00294071, -0.842447, 0.538771, 0, 11, 9)
+transform = Transform3D(0.999994, -0.00349065, 0, 0.00327595, 0.938487, 0.345298, -0.00120532, -0.345296, 0.938493, 0, 8, 15)
 current = true
 fov = 65.0
 near = 0.13
@@ -21,8 +22,7 @@ near = 0.13
 [node name="CardManager" type="Node3D" parent="."]
 script = ExtResource("1_bf53h")
 
-[node name="Knight" parent="." instance=ExtResource("7_fgofq")]
-transform = Transform3D(0.0846695, 0, 0.996409, 0, 1, 0, -0.996409, 0, 0.0846695, -5.08219, 0, 1.45593)
+[node name="CardRoot" parent="CardManager" groups=["cards"] instance=ExtResource("1_71axn")]
 
 [node name="Env" type="Node3D" parent="."]
 
@@ -155,3 +155,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57025, 0, -4.53046)
 
 [node name="bench2" parent="Env" instance=ExtResource("8_2irst")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.73491, -4.76837e-07, 1.48362)
+
+[node name="Knight" parent="Env" instance=ExtResource("7_fgofq")]
+transform = Transform3D(0.0846695, 0, 0.996409, 0, 1, 0, -0.996409, 0, 0.0846695, -5.08219, 0, 1.45593)

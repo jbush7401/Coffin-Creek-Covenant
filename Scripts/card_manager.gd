@@ -57,6 +57,7 @@ func position_card_on_constant_plane(card_node):
 	
 	if intersection_point:
 		card_node.global_position = intersection_point
+		print("Card positioned on constant distance plane at: ", intersection_point)
 
 # Function to clamp a 3D position to stay within screen bounds
 func clamp_position_to_screen(pos):
