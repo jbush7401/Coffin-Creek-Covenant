@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd1aw31e17fvn"]
+[gd_scene load_steps=2 format=3 uid="uid://11a7jkwpa8s0"]
 
-[ext_resource type="Texture2D" uid="uid://dlyixpd3s4est" path="res://Assets/InHouse/Card/CardTemplate001.png" id="1_g0utg"]
+[ext_resource type="Texture2D" uid="uid://dlyixpd3s4est" path="res://Assets/InHouse/Card/CardTemplate001.png" id="1_a640e"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_g0utg"]
-size = Vector3(10.3292, 14.2342, 1)
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CardRoot" type="Node3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-billboard = 1
-texture = ExtResource("1_g0utg")
-
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("BoxShape3D_g0utg")
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 759.0
+offset_bottom = 1050.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_a640e")

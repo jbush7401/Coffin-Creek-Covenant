@@ -1,7 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqnrp52fouayf"]
+[gd_scene load_steps=10 format=3 uid="uid://cqnrp52fouayf"]
 
-[ext_resource type="PackedScene" uid="uid://dd1aw31e17fvn" path="res://Scenes/Card/Card.tscn" id="1_71axn"]
-[ext_resource type="Script" uid="uid://c78kjmp3xoq62" path="res://Scripts/card_manager.gd" id="1_bf53h"]
 [ext_resource type="PackedScene" uid="uid://dsk1ue2kt1e8q" path="res://Assets/Purchased/Env/wall_cracked.gltf" id="3_kldst"]
 [ext_resource type="PackedScene" uid="uid://b45n6hbcby3dw" path="res://Assets/Purchased/Env/wall_corner.gltf" id="4_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://bux2fuqs53qyh" path="res://Assets/Purchased/Env/stairs_wood.gltf" id="5_b2bpf"]
@@ -9,22 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://bsksd0ec1xgjg" path="res://Assets/Purchased/Characters/Knight.glb" id="7_fgofq"]
 [ext_resource type="PackedScene" uid="uid://dvewll71o8y0i" path="res://Assets/Purchased/Env/bench.gltf" id="8_2irst"]
 [ext_resource type="PackedScene" uid="uid://7t7xe7f6ygr6" path="res://Assets/Purchased/Env/floor_tile_large.gltf" id="8_bf53h"]
+[ext_resource type="Script" uid="uid://iu2lm7d1acth" path="res://Scripts/card_manager.gd" id="9_71axn"]
 [ext_resource type="PackedScene" uid="uid://cpvtxkixgb8f1" path="res://Assets/Purchased/Env/chest.gltf" id="9_bf53h"]
 
 [node name="Game" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999994, -0.00349065, 0, 0.00327595, 0.938487, 0.345298, -0.00120532, -0.345296, 0.938493, 0, 8, 15)
+transform = Transform3D(0.999994, -0.00349066, 6.86829e-09, 0.00146416, 0.41945, 0.907777, -0.00316874, -0.907772, 0.419453, 0, 15, 9)
 current = true
 fov = 65.0
 near = 0.13
 
-[node name="CardManager" type="Node3D" parent="."]
-script = ExtResource("1_bf53h")
-
-[node name="CardRoot" parent="CardManager" groups=["cards"] instance=ExtResource("1_71axn")]
-
 [node name="Env" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
 
 [node name="Floor" type="Node3D" parent="Env"]
 
@@ -158,3 +153,15 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.734
 
 [node name="Knight" parent="Env" instance=ExtResource("7_fgofq")]
 transform = Transform3D(0.0846695, 0, 0.996409, 0, 1, 0, -0.996409, 0, 0.0846695, -5.08219, 0, 1.45593)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CardManager" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_71axn")
+metadata/_edit_use_anchors_ = true
