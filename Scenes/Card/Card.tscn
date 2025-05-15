@@ -3,10 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://dlyixpd3s4est" path="res://Assets/InHouse/Card/CardTemplate001.png" id="1_a640e"]
 
 [node name="Card" type="Control"]
+custom_minimum_size = Vector2(190, 263)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = -1738.0
+offset_bottom = -817.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -14,5 +18,4 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 759.0
 offset_bottom = 1050.0
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_a640e")
