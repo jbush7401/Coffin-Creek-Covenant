@@ -4,9 +4,9 @@ var card_being_dragged = null
 var card_drag_offset: Vector2 = Vector2.ZERO
 
 # Hand configuration
-var hand_size: int = 5
+var hand_size: int = 6
 var card_spacing: float = 120.0
-var hand_y_offset: float = 250.0  # Distance from bottom of screen
+var hand_y_offset: float = -50.0  # Distance from bottom of screen
 
 # Preload the card scene
 var Card = preload("res://Scenes/Card/card.tscn")
@@ -16,7 +16,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	initialize_hand()
 
-	mouse_filter = MOUSE_FILTER_PASS
 
 func initialize_hand() -> void:
 	# Get viewport size once
@@ -25,24 +24,26 @@ func initialize_hand() -> void:
 	# Calculate hand positioning
 	var total_width = card_spacing * (hand_size - 1)
 	var start_x = (viewport_size.x - total_width) / 2
-	
 	# Initialize the hand with a set number of cards
 	for i in range(hand_size):
 		# Create a new card instance
 		var card = Card.instantiate()
 		card.mouse_filter = MOUSE_FILTER_PASS
-		
 		# Calculate position after card is in scene
 		var card_x = start_x + i * card_spacing
 		var hand_y = viewport_size.y - card.get_size().y - hand_y_offset
+
+		var hand_pos = Vector2(card_x, hand_y)
 		
 		# Set the position of the card
-		card.position = Vector2(card_x, hand_y)
+		card.position = hand_pos
+		card.set_hand_position(hand_pos)
+
 		add_child(card)
 		
 		# Give each card a unique name for debugging
 		card.name = "Card_" + str(i)
-		
+
 		print("Card ", i, " positioned at: ", card.position)
 
 # Handle all input events on the CardManager
