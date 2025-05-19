@@ -37,7 +37,7 @@ func initialize_hand() -> void:
 		
 		# Set the position of the card
 		card.position = hand_pos
-		card.set_hand_position(hand_pos)
+		card.hand_position = hand_pos
 
 		add_child(card)
 		
@@ -99,5 +99,7 @@ func update_drag(mouse_pos: Vector2) -> void:
 func stop_drag() -> void:
 	if card_being_dragged:
 		print("Stopped dragging: ", card_being_dragged.name, " at: ", card_being_dragged.position)
+		card_being_dragged.return_to_hand()
 		card_being_dragged = null
 		card_drag_offset = Vector2.ZERO
+
